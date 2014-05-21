@@ -25,18 +25,6 @@
 	<div id="header">
 		<h1 id="logo"><?php echo CHtml::encode(Yii::app()->name); ?></h1>
 	</div><!-- header -->
-<!--
-	<div id="mainmenu">
-		<?php $this->widget('zii.widgets.CMenu',array(
-			'items'=>array(
-				array('label'=>'Home', 'url'=>array('/site/index')),
-				array('label'=>'About', 'url'=>array('/site/page', 'view'=>'about')),
-				array('label'=>'Contact', 'url'=>array('/site/contact')),
-				array('label'=>'Login', 'url'=>array('/site/login'), 'visible'=>Yii::app()->user->isGuest),
-				array('label'=>'Logout ('.Yii::app()->user->name.')', 'url'=>array('/site/logout'), 'visible'=>!Yii::app()->user->isGuest)
-			),
-		)); ?>
-	</div>  -->
 	 <?php
         $this->widget('bootstrap.widgets.BsNavbar', array(
             'collapse' => true,
@@ -109,7 +97,7 @@ array(
     'activateParents' => true,
     'items' => array(
         array('label' => 'Beneficio Social','url' => array('/beneficioSocial/index'),'visible' => !Yii::app()->user->isGuest),
-        array('label' => 'Proyectos','url' => array('/ControlProyecto/index'),'visible' => !Yii::app()->user->isGuest),
+        array('label' => 'Proyectos','url' => array('/Proyecto/index'),'visible' => !Yii::app()->user->isGuest),
         array('label' => 'Institucion','url' => array('/Institucion/index'),'visible' => !Yii::app()->user->isGuest),
         array('label' => 'Municipio','url' => array('/Municipio/index/'),'visible' => !Yii::app()->user->isGuest),
         array('label' => 'Informes','url' => array('/Informe/index'),'visible' => !Yii::app()->user->isGuest),
@@ -125,10 +113,6 @@ array(
 )
 ));
 ?>
-    <!--
-	<?php if(isset($this->breadcrumbs))
-        echo BsHtml::breadcrumbs($this->breadcrumbs);?>
-        -->
     <div class="container-fluid">
 <?php
         $this->widget('bootstrap.widgets.BsBreadCrumb', array(

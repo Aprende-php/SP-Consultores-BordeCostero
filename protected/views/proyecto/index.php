@@ -9,7 +9,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Proyecto', 'url'=>array('create')),
+    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Agregar Proyecto', 'url'=>array('persona/buscarPersona')),
     array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Proyecto', 'url'=>array('admin')),
 );
 ?>

@@ -6,22 +6,21 @@
 <?php
 $this->breadcrumbs=array(
 	'Proyectos'=>array('index'),
-	$model->PRO_CORREL,
+	$model->PRO_NOMBRE,
 );
 
 $this->menu=array(
-    array('label'=>'Listar Proyectos', 'url'=>array('index')),
-	array('label'=>'Crear Proyectos', 'url'=>array('create')),
+	array('label'=>'Agregar Proyecto', 'url'=>array('create','id'=>$model->PER_CORREL)),
 	array('label'=>'Agregar Control del Proyecto', 'url'=>array('//ControlProyecto/create','id'=>$model->PRO_CORREL)),
 	array('label'=>'Agregar Modelo de Negocios', 'url'=>array('//ModeloDeNegocios/create/','id'=>$model->PRO_CORREL)),
 	array('label'=>'Agregar Presupuesto', 'url'=>array('//Presupuesto/Crear','id'=>$model->PRO_CORREL)),
 	array('label'=>'Actualizar Proyecto', 'url'=>array('update', 'id'=>$model->PRO_CORREL)),
+    array('label'=>'Administrar Proyectos', 'url'=>array('admin')),
 	array('label'=>'Eliminar Proyecto', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PRO_CORREL),'confirm'=>'¿Esta seguro que desea eliminar este Proyecto?')),
-    array('label'=>'Administrar Proyecto', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Vista','Proyecto '.$model->PRO_CORREL) ?>
+<?php echo BsHtml::pageHeader('Ver','Proyecto '.$model->PRO_CORREL) ?>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
 	'htmlOptions' => array(
@@ -29,9 +28,15 @@ $this->menu=array(
 	),
 	'data'=>$model,
 	'attributes'=>array(
+		array(
+			'name'=>'PER_CORREL',
+			'value'=>Persona::model()->findByPk($model->PER_CORREL)->PER_RUT,
+		),
 		'PRO_CORREL',
-		'PER_CORREL',
-		'INT_CORREL',
+		array(
+			'name'=>'INT_CORREL',
+			'value'=>Institucion::model()->findByPk($model->INT_CORREL)->INT_NOMBRE,
+		),
 		'PRO_FECHA',
 		'PRO_NOMBRE',
 		'PRO_DESCRIPCION',
