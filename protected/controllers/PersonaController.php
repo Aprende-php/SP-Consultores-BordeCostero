@@ -32,7 +32,7 @@ class PersonaController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','buscarPersona'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -138,6 +138,17 @@ class PersonaController extends Controller
 	* Manages all models.
 	*/
 	public function actionAdmin()
+	{
+		$model=new Persona('search');
+		$model->unsetAttributes();  // clear any default values
+		if(isset($_GET['Persona']))
+			$model->attributes=$_GET['Persona'];
+
+		$this->render('admin',array(
+			'model'=>$model,
+		));
+	}	
+	public function actionbuscarPersona()
 	{
 		$model=new Persona('search');
 		$model->unsetAttributes();  // clear any default values

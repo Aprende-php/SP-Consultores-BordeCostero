@@ -69,6 +69,10 @@ return array(
 			'password' => '123456',
 			'charset' => 'utf8',
 		),
+        'authManager'=>array(
+            'class'=>'CDbAuthManager',
+            'connectionID'=>'db',
+        ),
 		'errorHandler'=>array(
 			// use 'site/error' action to display errors
 			'errorAction'=>'site/error',
