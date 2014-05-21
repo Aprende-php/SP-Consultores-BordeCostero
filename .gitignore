@@ -1,0 +1,9 @@
+assets/*
+!assets/.gitignore
+protected/runtime/*
+!protected/runtime/.gitignore
+protected/extensions/*
+!protected/extensions/.gitignore
+protected/data/*.db
+framework/*
+!framework/.gitignore
