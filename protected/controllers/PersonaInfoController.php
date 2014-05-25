@@ -60,16 +60,18 @@ class PersonaInfoController extends Controller
 	* Creates a new model.
 	* If creation is successful, the browser will be redirected to the 'view' page.
 	*/
-	public function actionCreate()
+	public function actionCreate($id)
 	{
 		$model=new PersonaInfo;
+		$model->PER_CORREL=$id;
 
 		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
+		$this->performAjaxValidation($model);
 
 		if(isset($_POST['PersonaInfo']))
 		{
 			$model->attributes=$_POST['PersonaInfo'];
+			$model->PER_VIGENCIA=date('Y-m-d H:i:s');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->PER_INFO_CORREL));
 		}
@@ -94,6 +96,7 @@ class PersonaInfoController extends Controller
 		if(isset($_POST['PersonaInfo']))
 		{
 			$model->attributes=$_POST['PersonaInfo'];
+			$model->PER_VIGENCIA=date('Y-m-d H:i:s');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->PER_INFO_CORREL));
 		}

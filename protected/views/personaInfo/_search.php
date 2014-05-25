@@ -22,7 +22,7 @@
     <?php echo $form->textFieldControlGroup($model,'PER_VIGENCIA'); ?>
 
     <div class="form-actions">
-        <?php echo BsHtml::submitButton('Search',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>
+        <?php echo BsHtml::submitButton('Buscar',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>
     </div>
 
 <?php $this->endWidget(); ?>

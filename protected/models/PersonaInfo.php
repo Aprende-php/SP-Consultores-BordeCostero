@@ -38,7 +38,7 @@ class PersonaInfo extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('PER_INFO_CORREL, PER_CORREL, COM_CORREL', 'required'),
+			array('PER_CORREL, COM_CORREL', 'required'),
 			array('PER_INFO_CORREL, PER_TELEFONO', 'length', 'max'=>45),
 			array('PER_CORREL, COM_CORREL, PER_LATITUD, PER_LONGITUD', 'length', 'max'=>10),
 			array('PER_NOMBRES', 'length', 'max'=>20),
@@ -69,17 +69,17 @@ class PersonaInfo extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'PER_INFO_CORREL' => 'Per Info Correl',
-			'PER_CORREL' => 'Per Correl',
-			'COM_CORREL' => 'Com Correl',
-			'PER_NOMBRES' => 'Per Nombres',
-			'PER_PATERNO' => 'Per Paterno',
-			'PER_MATERNO' => 'Per Materno',
-			'PER_DIRECCION' => 'Per Direccion',
-			'PER_LATITUD' => 'Per Latitud',
-			'PER_LONGITUD' => 'Per Longitud',
-			'PER_TELEFONO' => 'Per Telefono',
-			'PER_VIGENCIA' => 'Per Vigencia',
+			'PER_INFO_CORREL' => 'Información de Persona',
+			'PER_CORREL' => 'Persona',
+			'COM_CORREL' => 'Comuna',
+			'PER_NOMBRES' => 'Nombres',
+			'PER_PATERNO' => 'Paterno',
+			'PER_MATERNO' => 'Materno',
+			'PER_DIRECCION' => 'Direccion',
+			'PER_LATITUD' => 'Latitud',
+			'PER_LONGITUD' => 'Longitud',
+			'PER_TELEFONO' => 'Telefono',
+			'PER_VIGENCIA' => 'Vigencia',
 		);
 	}
 

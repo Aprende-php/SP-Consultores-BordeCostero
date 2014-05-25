@@ -17,9 +17,7 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->dropDownListControlGroup($model,'ITE_CORREL',CHtml::listData(Item::model()->findAll(),'ITE_CORREL','ITE_NOMBRE'), array(
-    'empty' => 'Tipos de item'
-)); ?>
+    <?php echo $form->dropDownListControlGroup($model,'ITE_CORREL',CHtml::listData(Item::model()->findAll(),'ITE_CORREL','ITE_NOMBRE'), array('empty' => 'Tipos de item')); ?>
     <?php echo $form->textAreaControlGroup($model,'PRE_DESCRIPCION',array('rows'=>6)); ?>
     <?php echo $form->textFieldControlGroup($model,'PRE_MONTO',array('maxlength'=>12)); ?>
 
