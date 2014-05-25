@@ -98,7 +98,7 @@ class PersonaInfoController extends Controller
 			$model->attributes=$_POST['PersonaInfo'];
 			$model->PER_VIGENCIA=date('Y-m-d H:i:s');
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->PER_INFO_CORREL));
+				$this->redirect(array('//persona/view','id'=>$model->PER_INFO_CORREL));
 		}
 
 		$this->render('update',array(

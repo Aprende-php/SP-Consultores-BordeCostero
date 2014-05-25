@@ -14,8 +14,6 @@ $per=PersonaInfo::model()->findByAttributes(array('PER_CORREL'=>$model->PER_CORR
 $this->menu=array(
 	array('label'=>'Agregar Persona', 'url'=>array('create')),
 	array('label'=>'Editar Persona', 'url'=>array('//PersonaInfo/update','id'=>$per->PER_INFO_CORREL)),
-
-	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
     array('label'=>'Administrar Persona', 'url'=>array('admin')),
     array('label'=>'Añadir Informacion Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
     array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
