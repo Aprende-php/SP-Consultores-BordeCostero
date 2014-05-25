@@ -140,5 +140,7 @@ array(
 </div><!-- page -->
 
 <script src="<?php echo Yii::app()->request->baseUrl; ?>/js/bootstrap.js"></script>
+<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.Rut.min.js"></script>
+
 </body>
 </html>
