@@ -1,6 +1,7 @@
 <?php
 /* @var $this PersonaController */
 /* @var $model Persona */
+Yii::app()->clientScript->registerScript('Validar Rut', "$('#Persona_PER_RUT').Rut({on_error: function(){ alert('Rut incorrecto');}})");
 ?>
 
 <?php
@@ -10,7 +11,6 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('label'=>'Lista de Personas', 'url'=>array('index')),
 	array('label'=>'Administrar Personas', 'url'=>array('admin')),
 );
 ?>

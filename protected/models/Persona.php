@@ -35,11 +35,34 @@ class Persona extends CActiveRecord
 			array('PER_RUT', 'required'),
 			array('PER_RUT', 'length', 'max'=>12),
 			array('PER_NACIMIENTO', 'safe'),
+			//Validar la existencia de rut
+           	array('PER_RUT', 'ifexistsRut', 'exists'=> 'nonexists'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('PER_CORREL, PER_RUT, PER_NACIMIENTO', 'safe', 'on'=>'search'),
 		);
 	}
+
+	public function ifexistsRut($attribute,$params)
+        {
+                $Rut =$this->$attribute;
+
+                $user = new Persona();
+
+                if($params['exists'] === 'nonexists')
+                {
+                        if ($user->findByAttributes(array('PER_RUT'=>$Rut)))
+                                $this->addError($attribute, 'El rut ya existe.');           
+
+                }
+                if($params['exists'] === 'exists')
+                {
+                if(!$user->findByAttributes(array('PER_RUT'=>$Rut)))
+                        $this->addError($attribute, 'El rut no existe en el sistema.');
+            }
+                
+        }
+
 
 	/**
 	 * @return array relational rules.
