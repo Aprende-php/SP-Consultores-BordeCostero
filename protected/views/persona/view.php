@@ -6,29 +6,27 @@
 <?php
 $this->breadcrumbs=array(
 	'Personas'=>array('index'),
-	$model->PER_CORREL,
+	$model->PER_RUT,
 );
 
 $per=PersonaInfo::model()->findByAttributes(array('PER_CORREL'=>$model->PER_CORREL));
 if ($per!==null) {
 $this->menu=array(
-	array('label'=>'Agregar Persona', 'url'=>array('create')),
-	array('label'=>'Editar Persona', 'url'=>array('//PersonaInfo/update','id'=>$per->PER_INFO_CORREL)),
-	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'¿Esta seguro de eliminar esta persona?')),
-    array('label'=>'Administrar Persona', 'url'=>array('admin')),
-    array('label'=>'Añadir Informacion Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
-    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
     array('label'=>'Añadir Proyecto', 'url'=>array('//Proyecto/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Información Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Administrar Persona', 'url'=>array('admin')),
+	array('label'=>'Editar Persona', 'url'=>array('//PersonaInfo/update','id'=>$per->PER_INFO_CORREL)),
 );
 
 } else {
 $this->menu=array(
+    array('label'=>'Añadir Proyecto', 'url'=>array('//Proyecto/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Información Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
 	array('label'=>'Agregar Persona', 'url'=>array('create')),
 	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'¿Esta seguro de eliminar esta persona?')),
     array('label'=>'Administrar Persona', 'url'=>array('admin')),
-    array('label'=>'Añadir Informacion Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
-    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
-    array('label'=>'Añadir Proyecto', 'url'=>array('//Proyecto/create','id'=>$model->PER_CORREL)),
 );
 
 }
@@ -37,24 +35,23 @@ $this->menu=array(
 
 ?>
 
-<?php echo BsHtml::pageHeader('Ver','Persona '.$model->PER_CORREL) ?>
+<?php echo BsHtml::pageHeader('Persona',$model->PER_RUT) ?>
 
 <?php 
 
-echo "<h3>Informacion Base</h3>";
+echo "<h3>Información Base</h3>";
 $this->widget('zii.widgets.CDetailView',array(
 	'htmlOptions' => array(
 		'class' => 'table table-striped table-condensed table-hover',
 	),
 	'data'=>$model,
 	'attributes'=>array(
-		'PER_CORREL',
 		'PER_RUT',
 		'PER_NACIMIENTO',
 	),
 ));
 if (PersonaInfo::model()->exists("PER_CORREL=$model->PER_CORREL")) {
-	echo "<h3>Informacion Extra</h3>";
+	echo "<h3>Información Extra</h3>";
 	$this->widget('zii.widgets.CDetailView',array(
 		'htmlOptions' => array(
 			'class' => 'table table-striped table-condensed table-hover',
