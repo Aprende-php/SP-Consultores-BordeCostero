@@ -4,6 +4,9 @@
 /* @var $form BSActiveForm */
 ?>
 
+<script src="/localhost:200/Proyectos/SP-Consultores-BordeCostero/js/jquery.js" type="text/javascript"></script>
+<script src="/localhost:200/Proyectos/SP-Consultores-BordeCostero/js/jquery.Rut.js" type="text/javascript"></script> 
+
 <?php $form=$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
     'id'=>'beneficio-social-form',
     // Please note: When you enable ajax validation, make sure the corresponding
@@ -17,7 +20,7 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->textFieldControlGroup($model,'PER_CORREL',array('maxlength'=>10)); ?>
+    <?php echo $form->textFieldControlGroup($model,'PER_CORREL',array('maxlength'=>12)); ?>
     <?php echo $form->dropDownListControlGroup($model,'INT_CORREL',CHtml::listData(Institucion::model()->findAll(),'INT_CORREL','INT_NOMBRE'), array('empty' => 'Escoja una Institución')); ?>
     <?php echo " Fecha Beneficio"?>
     <?php echo $form->dateField($model,'BEN_FECHA'); ?>
