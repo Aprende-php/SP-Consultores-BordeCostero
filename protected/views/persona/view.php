@@ -54,8 +54,6 @@ if (PersonaInfo::model()->exists("PER_CORREL=$model->PER_CORREL")) {
 			'PER_PATERNO',
 			'PER_MATERNO',
 			'PER_DIRECCION',
-			'PER_LATITUD',
-			'PER_LONGITUD',
 			'PER_TELEFONO',
 			'PER_VIGENCIA',
 		),
