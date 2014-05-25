@@ -96,12 +96,12 @@ array(
     'type' => 'navbar',
     'activateParents' => true,
     'items' => array(
-        array('label' => 'Beneficio Social','url' => array('/beneficioSocial/index'),'visible' => !Yii::app()->user->isGuest),
-        array('label' => 'Proyectos','url' => array('/Proyecto/index'),'visible' => !Yii::app()->user->isGuest),
-        array('label' => 'Institucion','url' => array('/Institucion/index'),'visible' => !Yii::app()->user->isGuest),
-        array('label' => 'Municipio','url' => array('/Municipio/index/'),'visible' => !Yii::app()->user->isGuest),
+        array('label' => 'Beneficio Social','url' => array('/beneficioSocial/admin'),'visible' => !Yii::app()->user->isGuest),
+        array('label' => 'Proyectos','url' => array('/Proyecto/admin'),'visible' => !Yii::app()->user->isGuest),
+        array('label' => 'Institucion','url' => array('/Institucion/admin'),'visible' => !Yii::app()->user->isGuest),
+        array('label' => 'Municipio','url' => array('/Municipio/admin/'),'visible' => !Yii::app()->user->isGuest),
         array('label' => 'Informes','url' => array('/Informe/index'),'visible' => !Yii::app()->user->isGuest),
-        array('label' => 'Usuarios','url' => array('/Persona/index'),'visible' => !Yii::app()->user->isGuest),
+        array('label' => 'Usuarios','url' => array('/Persona/admin'),'visible' => !Yii::app()->user->isGuest),
         array('label' => 'Login','url' => array('/site/login'),'pull' => BsHtml::NAVBAR_NAV_PULL_RIGHT,'visible' => Yii::app()->user->isGuest),
         array('label' => 'Logout (' . Yii::app()->user->name . ')','pull' => BsHtml::NAVBAR_NAV_PULL_RIGHT,'url' => array('/site/logout'),'visible' => !Yii::app()->user->isGuest)
         ),
