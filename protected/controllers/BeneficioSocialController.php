@@ -32,7 +32,7 @@ class BeneficioSocialController extends Controller
 				'users'=>array('*'),
 			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('create','update','createReg'),
 				'users'=>array('@'),
 			),
 			array('allow', // allow admin user to perform 'admin' and 'delete' actions
@@ -86,6 +86,27 @@ class BeneficioSocialController extends Controller
 		$this->render('create',array(
 		'model'=>$model,
 		));
+	}
+		public function actionCreateReg($id)
+	{
+		if(Persona::model()->exists("PER_CORREL=$id")){
+
+			$model=new BeneficioSocial;
+			$model->PER_CORREL=$id;
+			$this->performAjaxValidation($model);
+			if(isset($_POST['BeneficioSocial']))
+			{
+				$model->attributes=$_POST['BeneficioSocial'];
+				//$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
+				//$model->INT_CORREL=Institucion::model()->findByAttributes(array('INT_NOMBRE'=>$model->INT_CORREL))->INT_CORREL;
+				if($model->save())
+				$this->redirect(array('view','id'=>$model->BEN_CORREL));
+			}
+
+		$this->render('createReg',array(
+		'model'=>$model,
+		));
+		}
 	}
 
 	/**

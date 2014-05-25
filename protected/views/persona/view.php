@@ -15,7 +15,7 @@ $this->menu=array(
 	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
     array('label'=>'Administrar Persona', 'url'=>array('admin')),
     array('label'=>'Añadir Informacion Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
-    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/createReg','id'=>$model->PER_CORREL)),
     array('label'=>'Añadir Proyecto', 'url'=>array('//Proyecto/create','id'=>$model->PER_CORREL)),
 );
 ?>
