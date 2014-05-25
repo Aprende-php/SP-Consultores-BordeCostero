@@ -1,11 +1,13 @@
 <?php
 /* @var $this ModeloDeNegociosController */
 /* @var $model ModeloDeNegocios */
+$this->menu=array(
+    array('label'=>'Volver al proyecto', 'url'=>array('//proyecto/view','id'=>$model->PRO_CORREL)));
 ?>
 
 <?php
 $this->breadcrumbs=array(
-	'Atras'=>array(Yii::app()->user->returnUrl),
+	'Modelo de Negocios',
 	'Crear',
 );
 

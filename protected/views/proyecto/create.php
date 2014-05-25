@@ -10,6 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
+	array('label'=>'Volver', 'url'=>array('//persona/view','id'=>$model->PER_CORREL)),
 	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Proyectos', 'url'=>array('admin')),
 );
 ?>

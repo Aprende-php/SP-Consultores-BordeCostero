@@ -10,11 +10,8 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('label'=>'List ModeloDeNegocios', 'url'=>array('index')),
-	array('label'=>'Create ModeloDeNegocios', 'url'=>array('create')),
-	array('label'=>'Update ModeloDeNegocios', 'url'=>array('update', 'id'=>$model->MOD_CORREL)),
-	array('label'=>'Delete ModeloDeNegocios', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->MOD_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
-    array('label'=>'Manage ModeloDeNegocios', 'url'=>array('admin')),
+    array('label'=>'Volver al proyecto', 'url'=>array('//proyecto/view','id'=>$model->PRO_CORREL)),
+	array('label'=>'Editar ModeloDeNegocios', 'url'=>array('update', 'id'=>$model->MOD_CORREL)),
 );
 ?>
 

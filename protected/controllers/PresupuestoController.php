@@ -60,31 +60,14 @@ class PresupuestoController extends Controller
 	* Creates a new model.
 	* If creation is successful, the browser will be redirected to the 'view' page.
 	*/
-	public function actionCreate($id)
-	{
-		$proyecto=Proyecto::findByPk($id);
-		$model=new Presupuesto;
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['Presupuesto']))
-		{
-			$model->attributes=$_POST['Presupuesto'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->PRE_CORREL));
-		}
-
-		$this->render('create',array(
-		'model'=>$model,
-		));
-	}
 
 	public function actionCrear($id){
 		$model=new Presupuesto;
+		$model->PRO_CORREL=$id;
+		
 		if(isset($_POST['Presupuesto']))
 		{
 			$model->attributes=$_POST['Presupuesto'];
-			$model->PRO_CORREL=$id;
 			if($model->save())
 				$model->unsetAttributes();
 		}

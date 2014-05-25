@@ -80,13 +80,13 @@ class ModeloDeNegociosController extends Controller
 	}
 	public function actionCrear($id){
 		$model=new ModeloDeNegocios;
+		$model->PRO_CORREL=$id;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['ModeloDeNegocios']))
 		{
 			$model->attributes=$_POST['ModeloDeNegocios'];
-			$model->PRO_CORREL=$id;
 			$model->MOD_VIGENCIA=date('Y-m-d H:i:s');
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->MOD_CORREL));
