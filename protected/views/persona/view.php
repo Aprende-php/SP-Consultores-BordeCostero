@@ -10,18 +10,33 @@ $this->breadcrumbs=array(
 );
 
 $per=PersonaInfo::model()->findByAttributes(array('PER_CORREL'=>$model->PER_CORREL));
-
+if ($per!==null) {
 $this->menu=array(
 	array('label'=>'Agregar Persona', 'url'=>array('create')),
 	array('label'=>'Editar Persona', 'url'=>array('//PersonaInfo/update','id'=>$per->PER_INFO_CORREL)),
-
-	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
+	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'¿Esta seguro de eliminar esta persona?')),
     array('label'=>'Administrar Persona', 'url'=>array('admin')),
     array('label'=>'Añadir Informacion Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
-    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/createReg','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
     array('label'=>'Añadir Proyecto', 'url'=>array('//Proyecto/create','id'=>$model->PER_CORREL)),
 );
+
+} else {
+$this->menu=array(
+	array('label'=>'Agregar Persona', 'url'=>array('create')),
+	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'¿Esta seguro de eliminar esta persona?')),
+    array('label'=>'Administrar Persona', 'url'=>array('admin')),
+    array('label'=>'Añadir Informacion Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Proyecto', 'url'=>array('//Proyecto/create','id'=>$model->PER_CORREL)),
+);
+
+}
+
+
+
 ?>
+
 <?php echo BsHtml::pageHeader('Ver','Persona '.$model->PER_CORREL) ?>
 
 <?php 
