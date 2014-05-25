@@ -6,7 +6,7 @@ Yii::app()->clientScript->registerScript('Validar Rut', "$('#Persona_PER_RUT').R
 
 <?php
 $this->breadcrumbs=array(
-	'Personas'=>array('index'),
+	'Personas'=>array('admin'),
 	'Crear Persona',
 );
 

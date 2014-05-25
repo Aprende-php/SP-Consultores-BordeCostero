@@ -5,12 +5,11 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Proyectos'=>array('index'),
+	'Proyectos',
 	'Agregar',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'Listar Proyectos', 'url'=>array('index')),
 	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Proyectos', 'url'=>array('admin')),
 );
 ?>

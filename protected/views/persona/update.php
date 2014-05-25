@@ -5,7 +5,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Personas'=>array('index'),
+	'Personas'=>array('//persona/view','id'=>$model->PER_CORREL),
 	$model->PER_CORREL=>array('view','id'=>$model->PER_CORREL),
 	'Update',
 );

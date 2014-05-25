@@ -4,7 +4,7 @@
 
 
 $this->breadcrumbs=array(
-	'Personas'=>array('index'),
+	'Personas',
 	'Administrar',
 );
 

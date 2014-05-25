@@ -4,14 +4,11 @@
 
 
 $this->breadcrumbs=array(
-	'Proyectos'=>array('index'),
+	'Proyectos',
 	'Administrar',
 );
 
-$this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Proyecto', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Agregar Proyecto', 'url'=>array('create')),
-);
+$this->menu=array();
 
 Yii::app()->clientScript->registerScript('search', "
 $('.search-button').click(function(){
