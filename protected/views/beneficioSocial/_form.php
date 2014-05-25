@@ -4,8 +4,13 @@
 /* @var $form BSActiveForm */
 ?>
 
-<script src="/localhost:200/Proyectos/SP-Consultores-BordeCostero/js/jquery.js" type="text/javascript"></script>
-<script src="/localhost:200/Proyectos/SP-Consultores-BordeCostero/js/jquery.Rut.js" type="text/javascript"></script> 
+<script type="text/javascript">
+    $(document).ready(function(){
+        $('#BeneficioSocial_PER_CORREL').Rut({
+            on_error: function(){ alert('Rut incorrecto'); }
+        });
+    })
+</script>
 
 <?php $form=$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
     'id'=>'beneficio-social-form',
@@ -15,6 +20,7 @@
     // See class documentation of CActiveForm for details on this.
     'enableAjaxValidation'=>false,
 )); ?>
+    
 
     <p class="help-block">Fields with <span class="required">*</span> are required.</p>
 
