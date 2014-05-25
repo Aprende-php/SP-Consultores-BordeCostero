@@ -5,12 +5,12 @@
 
 <?php
 $this->breadcrumbs=array(
-	'control de proyecto',
+	'Control de Proyecto',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create control proyecto', 'url'=>array('create')),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage control proyecto', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Control de Proyecto', 'url'=>array('create')),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Control de Proyecto', 'url'=>array('admin')),
 );
 ?>
 

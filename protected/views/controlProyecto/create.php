@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'controlProyecto'=>array('index'),
-	'Create',
+	'Control de Proyecto'=>array('index'),
+	'Crear',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List controlProyecto', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage controlProyecto', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Control de Proyecto', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Control de Proyecto', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Create','controlProyecto') ?>
+<?php echo BsHtml::pageHeader('Crear','Control de Proyecto') ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

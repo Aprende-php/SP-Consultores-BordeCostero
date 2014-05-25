@@ -59,12 +59,12 @@ class ControlProyecto extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'CON_CORREL' => 'Con Correl',
-			'PRO_CORREL' => 'Pro Correl',
-			'CON_DESCRIPCION' => 'Con Descripcion',
-			'CON_RECOMENDACION' => 'Con Recomendacion',
-			'CON_ESTADO' => 'Con Estado',
-			'CON_FECHA_CONTROL' => 'Con Fecha Control',
+			'CON_CORREL' => 'N° Control',
+			'PRO_CORREL' => 'N° Proyecto',
+			'CON_DESCRIPCION' => 'Descripcion',
+			'CON_RECOMENDACION' => 'Recomendacion',
+			'CON_ESTADO' => 'Estado',
+			'CON_FECHA_CONTROL' => 'Fecha Control',
 		);
 	}
 

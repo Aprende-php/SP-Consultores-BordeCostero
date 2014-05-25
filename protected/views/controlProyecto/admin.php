@@ -4,13 +4,13 @@
 
 
 $this->breadcrumbs=array(
-	'controlProyect'=>array('index'),
-	'Manage',
+	'Control de Proyecto'=>array('index'),
+	'Administrar Control',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'List controlProyecto', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create controlProyecto', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista control de proyecto', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear control de proyecto', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,18 +27,12 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php echo BsHtml::pageHeader('Manage','controlProyecto') ?>
+<?php echo BsHtml::pageHeader('Administrar','Control de Proyecto') ?>
 <div class="panel panel-default">
     <div class="panel-heading">
-        <h3 class="panel-title"><?php echo BsHtml::button('Advanced search',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
+        <h3 class="panel-title"><?php echo BsHtml::button('Busqueda avanzada',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>
     </div>
     <div class="panel-body">
-        <p>
-            You may optionally enter a comparison operator (<b>&lt;</b>, <b>&lt;=</b>, <b>&gt;</b>, <b>&gt;=</b>, <b>
-                &lt;&gt;</b>
-            or <b>=</b>) at the beginning of each of your search values to specify how the comparison should be done.
-        </p>
-
         <div class="search-form" style="display:none">
             <?php $this->renderPartial('_search',array(
                 'model'=>$model,
@@ -62,6 +56,9 @@ $('.search-form form').submit(function(){
         )); ?>
     </div>
 </div>
+
+
+
 
 
 
