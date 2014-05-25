@@ -10,7 +10,7 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-	array('label'=>'Agregar Proyecto', 'url'=>array('create','id'=>$model->PER_CORREL)),
+	array('label'=>'Agregar Nuevo Proyecto', 'url'=>array('create','id'=>$model->PER_CORREL)),
 	array('label'=>'Agregar Control del Proyecto', 'url'=>array('//ControlProyecto/create','id'=>$model->PRO_CORREL)),
 	array('label'=>'Agregar Modelo de Negocios', 'url'=>array('//ModeloDeNegocios/create/','id'=>$model->PRO_CORREL)),
 	array('label'=>'Agregar Presupuesto', 'url'=>array('//Presupuesto/Crear','id'=>$model->PRO_CORREL)),
@@ -28,17 +28,16 @@ $this->menu=array(
 	),
 	'data'=>$model,
 	'attributes'=>array(
+		'PRO_NOMBRE',
 		array(
 			'name'=>'PER_CORREL',
 			'value'=>Persona::model()->findByPk($model->PER_CORREL)->PER_RUT,
 		),
-		'PRO_CORREL',
 		array(
 			'name'=>'INT_CORREL',
 			'value'=>Institucion::model()->findByPk($model->INT_CORREL)->INT_NOMBRE,
 		),
 		'PRO_FECHA',
-		'PRO_NOMBRE',
 		'PRO_DESCRIPCION',
 		'PRO_MONTO',
 	),

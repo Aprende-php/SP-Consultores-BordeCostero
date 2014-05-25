@@ -62,7 +62,7 @@ class PersonaController extends Controller
 	*/
 	public function actionCreate()
 	{
-		$model=new Persona;
+		$model=new Persona('create');
 
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);

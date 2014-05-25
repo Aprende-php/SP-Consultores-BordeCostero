@@ -5,14 +5,11 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Modelo De Negocioses'=>array('index'),
+	'Atras'=>array(Yii::app()->user->returnUrl),
 	'Crear',
 );
 
-$this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List ModeloDeNegocios', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage ModeloDeNegocios', 'url'=>array('admin')),
-);
+
 ?>
 
 <?php echo BsHtml::pageHeader('Crear','Modelo de negocios') ?>

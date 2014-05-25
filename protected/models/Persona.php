@@ -36,7 +36,7 @@ class Persona extends CActiveRecord
 			array('PER_RUT', 'length', 'max'=>12),
 			array('PER_NACIMIENTO', 'safe'),
 			//Validar la existencia de rut
-           	array('PER_RUT', 'ifexistsRut', 'exists'=> 'nonexists'), 
+           	array('PER_RUT', 'ifexistsRut', 'exists'=> 'nonexists','on'=>'create'), 
 			// The following rule is used by search().
 			// @todo Please remove those attributes that should not be searched.
 			array('PER_CORREL, PER_RUT, PER_NACIMIENTO', 'safe', 'on'=>'search'),

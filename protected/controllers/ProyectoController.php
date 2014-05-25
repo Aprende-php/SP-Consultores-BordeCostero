@@ -66,6 +66,7 @@ class ProyectoController extends Controller
 
 		$model=new Proyecto;
 		$model->PER_CORREL=$id;
+		$model->PRO_FECHA=date("Y-m-d");
 		// Uncomment the following line if AJAX validation is needed
 		$this->performAjaxValidation($model);
 		if(isset($_POST['Proyecto']))

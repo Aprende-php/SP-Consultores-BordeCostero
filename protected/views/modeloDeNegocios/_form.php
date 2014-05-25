@@ -27,6 +27,6 @@
     <?php echo $form->textAreaControlGroup($model,'MOD_COSTOS',array('rows'=>2)); ?>
     <?php echo $form->textAreaControlGroup($model,'MOD_INGRESO',array('rows'=>2)); ?>
 
-    <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
+    <?php echo BsHtml::submitButton('Guardar', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>

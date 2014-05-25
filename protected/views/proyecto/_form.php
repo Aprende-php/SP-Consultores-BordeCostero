@@ -25,6 +25,6 @@
     <?php echo $form->textAreaControlGroup($model,'PRO_DESCRIPCION',array('rows'=>6,'placeholder'=>'Agregue una breve descripción')); ?>
     <?php echo $form->textFieldControlGroup($model,'PRO_MONTO',array('maxlength'=>12,'min'=>0,'required'=>'')); ?>
     <br>
-    <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
+    <?php echo BsHtml::submitButton('Guardar', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>
