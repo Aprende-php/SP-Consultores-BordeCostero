@@ -9,8 +9,12 @@ $this->breadcrumbs=array(
 	$model->PER_CORREL,
 );
 
+$per=PersonaInfo::model()->findByAttributes(array('PER_CORREL'=>$model->PER_CORREL));
+
 $this->menu=array(
 	array('label'=>'Agregar Persona', 'url'=>array('create')),
+	array('label'=>'Editar Persona', 'url'=>array('//PersonaInfo/update','id'=>$per->PER_INFO_CORREL)),
+
 	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
     array('label'=>'Administrar Persona', 'url'=>array('admin')),
     array('label'=>'Añadir Informacion Personal', 'url'=>array('//PersonaInfo/create','id'=>$model->PER_CORREL)),
@@ -40,7 +44,7 @@ if (PersonaInfo::model()->exists("PER_CORREL=$model->PER_CORREL")) {
 		'htmlOptions' => array(
 			'class' => 'table table-striped table-condensed table-hover',
 		),
-		'data'=>$per=PersonaInfo::model()->findByAttributes(array('PER_CORREL'=>$model->PER_CORREL)),
+		'data'=>$per,
 		'attributes'=>array(
 			array(
 				'name'=>'Comuna',

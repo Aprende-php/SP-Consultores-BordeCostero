@@ -18,6 +18,16 @@
     <?php echo $form->errorSummary($model); ?>
     <?php echo $form->textFieldControlGroup(Persona::model()->findByPk($model->PER_CORREL), 'PER_RUT', array('disabled' => true));?>
     <?php echo $form->dropDownListControlGroup($model,'INT_CORREL',CHtml::listData(Institucion::model()->findAll(),'INT_CORREL','INT_NOMBRE'), array('empty' => 'Escoja una Institución')); ?>
+     <?php  
+     $this->widget('CJuiDateTimePicker',array(
+                'language'=>'',
+                'model'=>$model,                                // Model object
+                'attribute'=>'start_date_time', // Attribute name
+                'mode'=>'datetime',                     // Use "time","date" or "datetime" (default)
+                'options'=>array(),                     // jquery plugin options
+                'htmlOptions'=>array('readonly'=>true) // HTML options
+        ));                    
+     ?>
     <?php echo $form->dateField($model,'PRO_FECHA',array('min'=>'1990-01-01','max'=>date('Y-m-d'))); ?>
     <?php echo $form->textAreaControlGroup($model,'PRO_NOMBRE',array('rows'=>1,'placeholder'=>'Agregue el Nombre del Proyecto')); ?>
     <?php echo $form->textAreaControlGroup($model,'PRO_DESCRIPCION',array('rows'=>6,'placeholder'=>'Agregue una breve descripción')); ?>
