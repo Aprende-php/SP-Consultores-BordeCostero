@@ -118,7 +118,29 @@ class BeneficioSocialController extends Controller
 		));
 	}
 
-	/**
+	public function actionCreateReg($id)
+	{
+		if(Persona::model()->exists("PER_CORREL=$id")){
+
+			$model=new BeneficioSocial;
+			$model->PER_CORREL=$id;
+			$this->performAjaxValidation($model);
+			if(isset($_POST['BeneficioSocial']))
+			{
+				$model->attributes=$_POST['BeneficioSocial'];
+				//$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
+				//$model->INT_CORREL=Institucion::model()->findByAttributes(array('INT_NOMBRE'=>$model->INT_CORREL))->INT_CORREL;
+				if($model->save())
+				$this->redirect(array('view','id'=>$model->BEN_CORREL));
+			}
+
+		$this->render('createReg',array(
+		'model'=>$model,
+		));
+		}
+	}
+
+		/**
 	* Deletes a particular model.
 	* If deletion is successful, the browser will be redirected to the 'admin' page.
 	* @param integer $id the ID of the model to be deleted
