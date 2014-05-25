@@ -22,8 +22,9 @@ $('.search-form form').submit(function(){
 		data: $(this).serialize()
 	});
 	return false;
-});
-");
+});");
+Yii::app()->clientScript->registerScript('Validar Rut', "$('#Persona_PER_RUT').Rut({on_error: function(){ alert('Rut incorrecto');}})");
+
 ?>
 
 <?php echo BsHtml::pageHeader('Administrar','Personas') ?>
