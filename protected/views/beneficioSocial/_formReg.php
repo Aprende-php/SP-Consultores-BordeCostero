@@ -1,17 +1,3 @@
-<?php
-/* @var $this BeneficioSocialController */
-/* @var $model BeneficioSocial */
-/* @var $form BSActiveForm */
-?>
-
-<script type="text/javascript">
-    $(document).ready(function(){
-        $('#BeneficioSocial_PER_CORREL').Rut({
-            on_error: function(){ alert('Rut incorrecto'); }
-        });
-    })
-</script>
-
 <?php $form=$this->beginWidget('bootstrap.widgets.BsActiveForm', array(
     'id'=>'beneficio-social-form',
     // Please note: When you enable ajax validation, make sure the corresponding
@@ -26,7 +12,7 @@
 
     <?php echo $form->errorSummary($model); ?>
 
-    <?php echo $form->textFieldControlGroup($model,'PER_CORREL',array('maxlength'=>12)); ?>
+    <?php echo $form->textFieldControlGroup(Persona::model()->findByPk($model->PER_CORREL), 'PER_RUT', array('disabled' => true));?>
     <?php echo $form->dropDownListControlGroup($model,'INT_CORREL',CHtml::listData(Institucion::model()->findAll(),'INT_CORREL','INT_NOMBRE'), array('empty' => 'Escoja una Institución')); ?>
     <label>Fecha Beneficio</label>
     <?php echo $form->dateField($model,'BEN_FECHA'); ?>

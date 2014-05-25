@@ -15,6 +15,6 @@ $this->menu=array(
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Create','BeneficioSocial') ?>
+<?php echo BsHtml::pageHeader('Crear','BeneficioSocial') ?>
 
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>
