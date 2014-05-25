@@ -141,6 +141,7 @@ public function actionCreate($id)
 	public function actionAdmin()
 	{
 		$model=new ControlProyecto('search');
+		
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['ControlProyecto']))
 			$model->attributes=$_GET['ControlProyecto'];

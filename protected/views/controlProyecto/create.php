@@ -5,9 +5,12 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Control de Proyecto'=>array('index'),
-	'Crear',
+	'Proyectos'=>array('index'),
+	Proyecto::model()->findByPk($model->PRO_CORREL)->PRO_NOMBRE=>array('//Proyecto/view/','id'=>$model->PRO_CORREL),
+	'Crear Control de Proyecto',
+	//'Crear Control De Proyecto'=>array('//controlProyecto/create'),
 );
+
 
 $this->menu=array(
     array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Control de Proyecto', 'url'=>array('index')),
