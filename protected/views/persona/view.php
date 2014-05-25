@@ -10,15 +10,17 @@ $this->breadcrumbs=array(
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List Persona', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create Persona', 'url'=>array('create')),
-	array('icon' => 'glyphicon glyphicon-edit','label'=>'Update Persona', 'url'=>array('update', 'id'=>$model->PER_CORREL)),
-	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Delete Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage Persona', 'url'=>array('admin')),
+	array('label'=>'Agregar Persona', 'url'=>array('create')),
+	array('label'=>'Actualizar Persona', 'url'=>array('update', 'id'=>$model->PER_CORREL)),
+	array('label'=>'Eliminar Persona', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PER_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
+    array('label'=>'Administrar Persona', 'url'=>array('admin')),
+    array('label'=>'Añadir Informacion Personal', 'url'=>array('admin')),
+    array('label'=>'Añadir Beneficio Social', 'url'=>array('//beneficioSocial/create','id'=>$model->PER_CORREL)),
+    array('label'=>'Añadir Proyecto', 'url'=>array('//Proyecto/create','id'=>$model->PER_CORREL)),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('View','Persona '.$model->PER_CORREL) ?>
+<?php echo BsHtml::pageHeader('Ver','Persona '.$model->PER_CORREL) ?>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
 	'htmlOptions' => array(

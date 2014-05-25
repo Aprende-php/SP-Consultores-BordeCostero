@@ -18,8 +18,8 @@
     <?php echo $form->errorSummary($model); ?>
 
     <?php echo $form->textFieldControlGroup($model,'PER_RUT',array('maxlength'=>12)); ?>
-    <?php echo $form->textFieldControlGroup($model,'PER_NACIMIENTO'); ?>
+    <?php echo $form->dateFieldControlGroup($model,'PER_NACIMIENTO'); ?>
 
-    <?php echo BsHtml::submitButton('Submit', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
+    <?php echo BsHtml::submitButton('Guardar', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>
