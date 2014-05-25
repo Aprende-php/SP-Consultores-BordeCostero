@@ -49,7 +49,7 @@ class BeneficioSocialController extends Controller
 	* Displays a particular model.
 	* @param integer $id the ID of the model to be displayed
 	*/
-	public function actionView($id)
+	public function actionView($id=NULL)
 	{
 		$this->render('view',array(
 			'model'=>$this->loadModel($id),
@@ -60,6 +60,13 @@ class BeneficioSocialController extends Controller
 	* Creates a new model.
 	* If creation is successful, the browser will be redirected to the 'view' page.
 	*/
+	public function actionBusca()
+	{
+		$model=new BeneficioSocial;
+		$model->PER_CORREL=Persona::model()->findByAttributes(array(
+		'PER_CORREL'=>$model->PER_RUT))->PER_RUT;
+	}
+
 	public function actionCreate()
 	{
 		$model=new BeneficioSocial;
@@ -70,6 +77,8 @@ class BeneficioSocialController extends Controller
 		if(isset($_POST['BeneficioSocial']))
 		{
 			$model->attributes=$_POST['BeneficioSocial'];
+			$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
+			//$model->INT_CORREL=Institucion::model()->findByAttributes(array('INT_NOMBRE'=>$model->INT_CORREL))->INT_CORREL;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->BEN_CORREL));
 		}

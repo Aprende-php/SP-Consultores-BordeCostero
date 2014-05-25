@@ -5,16 +5,16 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Beneficio Socials'=>array('index'),
+	'Beneficio Social'=>array('index'),
 	$model->BEN_CORREL,
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List BeneficioSocial', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create BeneficioSocial', 'url'=>array('create')),
-	array('icon' => 'glyphicon glyphicon-edit','label'=>'Update BeneficioSocial', 'url'=>array('update', 'id'=>$model->BEN_CORREL)),
-	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Delete BeneficioSocial', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->BEN_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage BeneficioSocial', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Beneficios Sociales ', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Beneficio Social', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-edit','label'=>'Editar Beneficio Social', 'url'=>array('update', 'id'=>$model->BEN_CORREL)),
+	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Borrar Beneficio Social', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->BEN_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Beneficio Social', 'url'=>array('admin')),
 );
 ?>
 

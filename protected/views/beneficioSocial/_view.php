@@ -10,7 +10,7 @@
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('PER_CORREL')); ?>:</b>
-	<?php echo CHtml::encode($data->PER_CORREL); ?>
+	<?php echo CHtml::encode(Persona::model()->findByPk($data->PER_CORREL)->PER_RUT); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('INT_CORREL')); ?>:</b>

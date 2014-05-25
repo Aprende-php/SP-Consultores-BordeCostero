@@ -4,13 +4,13 @@
 
 
 $this->breadcrumbs=array(
-	'Beneficio Socials'=>array('index'),
-	'Manage',
+	'Beneficio Social'=>array('index'),
+	'Administrar Beneficio Social',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'List BeneficioSocial', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create BeneficioSocial', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Beneficios Sociales', 'url'=>array('index')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Beneficio Social', 'url'=>array('create')),
 );
 
 Yii::app()->clientScript->registerScript('search', "
@@ -27,7 +27,7 @@ $('.search-form form').submit(function(){
 ");
 ?>
 
-<?php echo BsHtml::pageHeader('Manage','Beneficio Socials') ?>
+<?php echo BsHtml::pageHeader('Administrar','Beneficio Social') ?>
 <div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title"><?php echo BsHtml::button('Advanced search',array('class' =>'search-button', 'icon' => BsHtml::GLYPHICON_SEARCH,'color' => BsHtml::BUTTON_COLOR_PRIMARY), '#'); ?></h3>

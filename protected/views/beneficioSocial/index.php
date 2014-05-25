@@ -5,12 +5,12 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Beneficio Socials',
+	'Beneficio Social',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create BeneficioSocial', 'url'=>array('create')),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage BeneficioSocial', 'url'=>array('admin')),
+    array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Beneficio Social', 'url'=>array('create')),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Beneficio Social', 'url'=>array('admin')),
 );
 ?>
 

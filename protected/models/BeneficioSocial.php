@@ -66,7 +66,7 @@ class BeneficioSocial extends CActiveRecord
 	public function attributeLabels()
 	{
 		return array(
-			'BEN_CORREL' => 'Ben Correl',
+			'BEN_CORREL' => 'N° Beneficio',
 			'PER_CORREL' => 'Rut Beneciario',
 			'INT_CORREL' => 'Institucion',
 			'BEN_FECHA' => 'Fecha Beneficio',
