@@ -1,4 +1,5 @@
 Descromprimir datos en:
 
-bootstrap.rar -> /protected/extensions
-framework.rar -> /
+bootstrap.rar 	-> /protected/extensions
+mpdf.rar	-> /protected/vendors
+framework.rar 	-> /

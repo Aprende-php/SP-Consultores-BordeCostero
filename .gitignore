@@ -2,6 +2,8 @@ assets/*
 !assets/.gitignore
 protected/runtime/*
 !protected/runtime/.gitignore
+protected/vendors/*
+!protected/vendors/.gitignore
 protected/data/*.db
 framework/*
 !framework/.gitignore
