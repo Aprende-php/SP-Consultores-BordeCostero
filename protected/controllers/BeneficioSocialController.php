@@ -96,13 +96,15 @@ class BeneficioSocialController extends Controller
 	{
 		if($id==null){
 			$model=new BeneficioSocial;
-			if(isset($_POST['BeneficioSocial']))
-			{
-				$model->attributes=$_POST['BeneficioSocial'];
-				$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
-				if($model->save())
-				$this->redirect(array('view','id'=>$model->BEN_CORREL));
-			}
+				if(isset($_POST['BeneficioSocial']))
+				{
+				//	if(Persona::model()->exists("PER_CORREL=")){
+						$model->attributes=$_POST['BeneficioSocial'];
+						$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
+						if($model->save())
+						$this->redirect(array('view','id'=>$model->BEN_CORREL));
+				}
+			//}
 			$this->render('create',array(
 			'model'=>$model,
 		));
@@ -119,10 +121,10 @@ class BeneficioSocialController extends Controller
 					$this->redirect(array('view','id'=>$model->BEN_CORREL));
 				}
 			}
-		}
-		$this->render('createReg',array(
-		'model'=>$model,
-		));
+			$this->render('createReg',array(
+			'model'=>$model,
+			));
+			}
 		}
 	
 
