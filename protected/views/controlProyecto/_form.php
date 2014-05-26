@@ -18,9 +18,10 @@
     <?php echo $form->errorSummary($model); ?>
     <?php echo $form->textAreaControlGroup($model,'CON_DESCRIPCION',array('rows'=>6)); ?>
     <?php echo $form->textAreaControlGroup($model,'CON_RECOMENDACION',array('rows'=>6)); ?>
-    <?php echo $form->textFieldControlGroup($model,'CON_ESTADO',array('maxlength'=>10)); ?>
-    <?php echo $form->textFieldControlGroup($model,'CON_FECHA_CONTROL'); ?>
-
+    <?php echo $form->dropDownListControlGroup($model, 'CON_ESTADO', array(
+    'Proyecto en marcha','Proyecto vendido','Proyecto finalizado'), array(
+    'empty' => 'Estado del proyecto','class' => BsHtml::INPUT_SIZE_SM));?>
+    <?php echo $form->dateField($model,'CON_FECHA_CONTROL'); ?>
     <?php echo BsHtml::submitButton('Aceptar', array('color' => BsHtml::BUTTON_COLOR_PRIMARY)); ?>
 
 <?php $this->endWidget(); ?>

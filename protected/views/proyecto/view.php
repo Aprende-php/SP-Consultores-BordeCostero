@@ -15,6 +15,7 @@ $this->menu=array(
 	array('label'=>'Agregar Control del Proyecto', 'url'=>array('//ControlProyecto/create','id'=>$model->PRO_CORREL)),
 	array('label'=>'Agregar Modelo de Negocios', 'url'=>array('//ModeloDeNegocios/crear/','id'=>$model->PRO_CORREL)),
 	array('label'=>'Agregar Presupuesto', 'url'=>array('//Presupuesto/Crear','id'=>$model->PRO_CORREL)),
+	array('label'=>'Ver Controles de Proyecto', 'url'=>array('//ControlProyecto/admin','id'=>$model->PRO_CORREL)),
 	array('label'=>'Actualizar Proyecto', 'url'=>array('update', 'id'=>$model->PRO_CORREL)),
     array('label'=>'Administrar Proyectos', 'url'=>array('admin')),
 	array('label'=>'Eliminar Proyecto', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->PRO_CORREL),'confirm'=>'¿Esta seguro que desea eliminar este Proyecto?')),

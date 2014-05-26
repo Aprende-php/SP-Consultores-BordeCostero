@@ -60,10 +60,18 @@ class ControlProyectoController extends Controller
 	* Creates a new model.
 	* If creation is successful, the browser will be redirected to the 'view' page.
 	*/
+<<<<<<< HEAD
 	public function actionCreate($id)
 	{
 		$model=new ControlProyecto;
 		$model->PRO_CORREL=$id;
+=======
+public function actionCreate($id)
+	{
+		$model=new ControlProyecto;
+		$model->PRO_CORREL=$id;
+
+>>>>>>> origin/Beneficio/control
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
@@ -140,6 +148,7 @@ class ControlProyectoController extends Controller
 	public function actionAdmin()
 	{
 		$model=new ControlProyecto('search');
+		
 		$model->unsetAttributes();  // clear any default values
 		if(isset($_GET['ControlProyecto']))
 			$model->attributes=$_GET['ControlProyecto'];

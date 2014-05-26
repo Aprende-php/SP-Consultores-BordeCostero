@@ -8,17 +8,16 @@ $this->breadcrumbs=array(
 	'Beneficio Social'=>array('index'),
 	$model->BEN_CORREL,
 );
-
 $this->menu=array(
     array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Beneficios Sociales ', 'url'=>array('index')),
 	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Beneficio Social', 'url'=>array('create')),
 	array('icon' => 'glyphicon glyphicon-edit','label'=>'Editar Beneficio Social', 'url'=>array('update', 'id'=>$model->BEN_CORREL)),
-	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Borrar Beneficio Social', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->BEN_CORREL),'confirm'=>'Are you sure you want to delete this item?')),
+	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Borrar Beneficio Social', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->BEN_CORREL),'confirm'=>'Seguro desee borrar este item?')),
     array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Beneficio Social', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('View','BeneficioSocial '.$model->BEN_CORREL) ?>
+<?php echo BsHtml::pageHeader('Ver','BeneficioSocial '.$model->BEN_CORREL) ?>
 
 <?php $this->widget('zii.widgets.CDetailView',array(
 	'htmlOptions' => array(
@@ -27,7 +26,10 @@ $this->menu=array(
 	'data'=>$model,
 	'attributes'=>array(
 		'BEN_CORREL',
-		'PER_CORREL',
+		array(
+			'name'=>'Rut Beneficiario',
+			'value'=>Persona::model()->findByPk($model->PER_CORREL)->PER_RUT,
+			),
 		'INT_CORREL',
 		'BEN_FECHA',
 		'BEN_TIPO',
