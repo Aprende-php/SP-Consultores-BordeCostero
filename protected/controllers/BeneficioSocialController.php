@@ -67,32 +67,7 @@ class BeneficioSocialController extends Controller
 		'PER_CORREL'=>$model->PER_RUT))->PER_RUT;
 	}
 
-	public function actionCreate()
-	{
-		$model=new BeneficioSocial;
-
-		// Uncomment the following line if AJAX validation is needed
-		// $this->performAjaxValidation($model);
-
-		if(isset($_POST['BeneficioSocial']))
-		{
-			$model->attributes=$_POST['BeneficioSocial'];
-			if(Persona::model()->exists("PER_RUT='$model->PER_CORREL'")){
-				$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
-			//$model->INT_CORREL=Institucion::model()->findByAttributes(array('INT_NOMBRE'=>$model->INT_CORREL))->INT_CORREL;
-				if($model->save())
-					$this->redirect(array('view','id'=>$model->BEN_CORREL));
-			}
-			else{
-				
-				
-			}
-		}
-
-		$this->render('create',array(
-		'model'=>$model,
-		));
-	}
+	
 
 	/**
 	* Updates a particular model.
@@ -117,28 +92,39 @@ class BeneficioSocialController extends Controller
 			'model'=>$model,
 		));
 	}
-
-	public function actionCreateReg($id)
+	public function actionCreate($id=null)
 	{
-		if(Persona::model()->exists("PER_CORREL=$id")){
-
+		if($id==null){
 			$model=new BeneficioSocial;
-			$model->PER_CORREL=$id;
-			$this->performAjaxValidation($model);
 			if(isset($_POST['BeneficioSocial']))
 			{
 				$model->attributes=$_POST['BeneficioSocial'];
-				//$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
-				//$model->INT_CORREL=Institucion::model()->findByAttributes(array('INT_NOMBRE'=>$model->INT_CORREL))->INT_CORREL;
+				$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
 				if($model->save())
 				$this->redirect(array('view','id'=>$model->BEN_CORREL));
 			}
-
+			$this->render('create',array(
+			'model'=>$model,
+		));
+		}
+		else{
+			if(Persona::model()->exists("PER_CORREL=$id")){
+				$model=new BeneficioSocial;
+				$model->PER_CORREL=$id;
+				$this->performAjaxValidation($model);
+				if(isset($_POST['BeneficioSocial']))
+				{
+					$model->attributes=$_POST['BeneficioSocial'];
+					if($model->save())
+					$this->redirect(array('view','id'=>$model->BEN_CORREL));
+				}
+			}
+		}
 		$this->render('createReg',array(
 		'model'=>$model,
 		));
 		}
-	}
+	
 
 		/**
 	* Deletes a particular model.

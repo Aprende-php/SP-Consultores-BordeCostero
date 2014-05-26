@@ -25,7 +25,6 @@
     <p class="help-block">Campos con <span class="required">*</span> son obligatorios.</p>
 
     <?php echo $form->errorSummary($model); ?>
-
     <?php echo $form->textFieldControlGroup($model,'PER_CORREL',array('maxlength'=>12)); ?>
     <?php echo $form->dropDownListControlGroup($model,'INT_CORREL',CHtml::listData(Institucion::model()->findAll(),'INT_CORREL','INT_NOMBRE'), array('empty' => 'Escoja una Institución')); ?>
     <label>Fecha Beneficio</label>
