@@ -19,7 +19,7 @@
     <?php echo $form->textFieldControlGroup($model,'BEN_MONTO',array('maxlength'=>12)); ?>
 
     <div class="form-actions">
-        <?php echo BsHtml::submitButton('Search',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>
+        <?php echo BsHtml::submitButton('Buscar',  array('color' => BsHtml::BUTTON_COLOR_PRIMARY,));?>
     </div>
 
 <?php $this->endWidget(); ?>
