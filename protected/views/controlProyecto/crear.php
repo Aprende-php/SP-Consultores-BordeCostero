@@ -5,7 +5,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	'controlProyect'=>array('index'),
+	'Administrar'=>array('admin'),
 	'Crear',
 );
 

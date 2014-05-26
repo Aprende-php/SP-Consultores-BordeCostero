@@ -81,9 +81,11 @@ class BeneficioSocialController extends Controller
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
+		$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_CORREL'=>$model->PER_CORREL))->PER_RUT;
 		if(isset($_POST['BeneficioSocial']))
 		{
 			$model->attributes=$_POST['BeneficioSocial'];
+			$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
 			if($model->save())
 				$this->redirect(array('view','id'=>$model->BEN_CORREL));
 		}
@@ -98,13 +100,13 @@ class BeneficioSocialController extends Controller
 			$model=new BeneficioSocial;
 				if(isset($_POST['BeneficioSocial']))
 				{
-				//	if(Persona::model()->exists("PER_CORREL=")){
-						$model->attributes=$_POST['BeneficioSocial'];
+					$model->attributes=$_POST['BeneficioSocial'];
+					if(Persona::model()->exists("PER_RUT='$model->PER_CORREL'")){
 						$model->PER_CORREL=Persona::model()->findByAttributes(array('PER_RUT'=>$model->PER_CORREL))->PER_CORREL;
 						if($model->save())
 						$this->redirect(array('view','id'=>$model->BEN_CORREL));
 				}
-			//}
+			}
 			$this->render('create',array(
 			'model'=>$model,
 		));

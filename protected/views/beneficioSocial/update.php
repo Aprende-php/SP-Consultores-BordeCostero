@@ -5,18 +5,17 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Beneficio Socials'=>array('index'),
+	'Administrar Beneficio Social'=>array('admin'),
 	$model->BEN_CORREL=>array('view','id'=>$model->BEN_CORREL),
-	'Update',
+	'Editar',
 );
 
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'List BeneficioSocial', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Create BeneficioSocial', 'url'=>array('create')),
-    array('icon' => 'glyphicon glyphicon-list-alt','label'=>'View BeneficioSocial', 'url'=>array('view', 'id'=>$model->BEN_CORREL)),
-    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Manage BeneficioSocial', 'url'=>array('admin')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Beneficio Social', 'url'=>array('create')),
+    array('icon' => 'glyphicon glyphicon-list-alt','label'=>'Ver BeneficioSocial', 'url'=>array('view', 'id'=>$model->BEN_CORREL)),
+    array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Beneficio Social', 'url'=>array('admin')),
 );
 ?>
 
-<?php echo BsHtml::pageHeader('Update','BeneficioSocial '.$model->BEN_CORREL) ?>
+<?php echo BsHtml::pageHeader('Editar','BeneficioSocial '.$model->BEN_CORREL) ?>
 <?php $this->renderPartial('_form', array('model'=>$model)); ?>

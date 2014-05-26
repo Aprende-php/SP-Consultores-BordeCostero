@@ -5,12 +5,11 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Beneficio Social'=>array('index'),
+	'Administrar Beneficio Social'=>array('admin'),
 	$model->BEN_CORREL,
 );
 $this->menu=array(
-    array('icon' => 'glyphicon glyphicon-list','label'=>'Lista Beneficios Sociales ', 'url'=>array('index')),
-	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Beneficio Social', 'url'=>array('create')),
+	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear Beneficio Social', 'url'=>array('create','id'=>Persona::model()->findByPk($model->PER_CORREL)->PER_CORREL)),
 	array('icon' => 'glyphicon glyphicon-edit','label'=>'Editar Beneficio Social', 'url'=>array('update', 'id'=>$model->BEN_CORREL)),
 	array('icon' => 'glyphicon glyphicon-minus-sign','label'=>'Borrar Beneficio Social', 'url'=>'#', 'linkOptions'=>array('submit'=>array('delete','id'=>$model->BEN_CORREL),'confirm'=>'Seguro desee borrar este item?')),
     array('icon' => 'glyphicon glyphicon-tasks','label'=>'Administrar Beneficio Social', 'url'=>array('admin')),

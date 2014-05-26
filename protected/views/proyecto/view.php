@@ -5,7 +5,7 @@
 
 <?php
 $this->breadcrumbs=array(
-	'Proyectos',
+	'Administrar'=>array('admin'),
 	$model->PRO_NOMBRE,
 );
 

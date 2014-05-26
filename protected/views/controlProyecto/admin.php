@@ -4,12 +4,11 @@
 
 
 $this->breadcrumbs=array(
-	'Control de Proyecto'=>array('index'),
+	'Administrar Proyecto'=>array('//Proyecto/admin'),
 	'Administrar Control',
 );
 
 $this->menu=array(
-	array('icon' => 'glyphicon glyphicon-list','label'=>'Lista control de proyecto', 'url'=>array('index')),
 	array('icon' => 'glyphicon glyphicon-plus-sign','label'=>'Crear control de proyecto', 'url'=>array('create')),
 );
 
