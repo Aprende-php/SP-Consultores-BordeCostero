@@ -129,10 +129,7 @@ class MunicipioController extends Controller
 	*/
 	public function actionIndex()
 	{
-		$dataProvider=new CActiveDataProvider('Municipio');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
+		Yii::app()->request->sendFile("hola.xls","<table><tr><td>hola</td></tr></table>");
 	}
 
 	/**
