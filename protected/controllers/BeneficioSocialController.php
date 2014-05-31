@@ -55,20 +55,6 @@ class BeneficioSocialController extends Controller
 			'model'=>$this->loadModel($id),
 		));
 	}
-
-	/**
-	* Creates a new model.
-	* If creation is successful, the browser will be redirected to the 'view' page.
-	*/
-	public function actionBusca()
-	{
-		$model=new BeneficioSocial;
-		$model->PER_CORREL=Persona::model()->findByAttributes(array(
-		'PER_CORREL'=>$model->PER_RUT))->PER_RUT;
-	}
-
-	
-
 	/**
 	* Updates a particular model.
 	* If update is successful, the browser will be redirected to the 'view' page.

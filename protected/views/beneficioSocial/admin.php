@@ -43,8 +43,15 @@ $('.search-form form').submit(function(){
 			'dataProvider'=>$model->search(),
 			'filter'=>$model,
 			'columns'=>array(
-				'PER_CORREL',
-				'INT_CORREL',
+			array(
+				'name'=>'PER_CORREL',
+				'header'=>'Rut Beneficiario',
+				'value'=>'Persona::model()->findByPk($data->PER_CORREL)->PER_RUT',
+			),
+    		array(
+				'name'=>'INT_CORREL',
+				'value'=>'Institucion::model()->findByPk($data->INT_CORREL)->INT_NOMBRE',
+			),
 				'BEN_FECHA',
 				'BEN_TIPO',
 				'BEN_NOMBRE',

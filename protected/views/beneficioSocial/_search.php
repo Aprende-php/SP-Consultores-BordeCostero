@@ -10,7 +10,7 @@
 )); ?>
 
     <?php echo $form->textFieldControlGroup($model,'BEN_CORREL',array('maxlength'=>10)); ?>
-    <?php echo $form->textFieldControlGroup($model,'PER_CORREL',array('maxlength'=>10)); ?>
+    <?php echo $form->textFieldControlGroup(persona::model(),'PER_RUT',array('maxlength'=>12)); ?>
     <?php echo $form->textFieldControlGroup($model,'INT_CORREL',array('maxlength'=>10)); ?>
     <?php echo $form->textFieldControlGroup($model,'BEN_FECHA'); ?>
     <?php echo $form->textFieldControlGroup($model,'BEN_TIPO',array('maxlength'=>11)); ?>
